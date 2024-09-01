@@ -1,3 +1,1 @@
-# theodinproject solution for Hangman project
-
-you can run the code from [here](https://replit.com/@zakizaki27/Hangman)
+My solution for [Hangman](https://www.theodinproject.com/lessons/ruby-hangman) project from [theodinproject](https://www.theodinproject.com)
