@@ -43,14 +43,16 @@ class Computer < Player
 			:correct => 0,
 			:onlyClrCorrect => 0
 		}
-		guess.each_with_index{|clr, i| 
+		checked_indexes = []
+		guess.each_with_index{|clr, i|
 			if @code[i] == clr
-			  feedback[:correct] = feedback[:correct] + 1
-		      codePegsCountCopy[clr] = codePegsCountCopy[clr] - 1
+			  	feedback[:correct] = feedback[:correct] + 1
+		      	codePegsCountCopy[clr] = codePegsCountCopy[clr] - 1
+				checked_indexes.push(i)
 			end
 		}
 		guess.each_with_index{|clr, i| 
-			if codePegsCountCopy[clr].to_i==0
+			if codePegsCountCopy[clr].to_i==0 or checked_indexes.index(i)!=nil
 				next
 			end
 			codePegsCountCopy[clr] = codePegsCountCopy[clr] - 1
